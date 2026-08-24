@@ -19,8 +19,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/configure-pages@v5
+      - name: Assemble frontend artifact
+        run: |
+          mkdir -p dist/assets
+          cp index.html manifest.webmanifest robots.txt sitemap.xml sw.js dist/
+          cp assets/logo.png dist/assets/logo.png
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: dist
       - id: deployment
         uses: actions/deploy-pages@v4
