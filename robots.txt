@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://narotechindia-code.github.io/Crabbiq/sitemap.xml
