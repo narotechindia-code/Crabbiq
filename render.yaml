@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: crabbiq-api
+    runtime: docker
+    rootDir: backend
+    plan: free
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - key: CRABBIQ_CORS
+        sync: false
+      - key: CRABBIQ_MAX_ACTIVE
+        value: "2"
+      - key: CRABBIQ_DOWNLOAD_DIR
+        value: /tmp/crabbiq-downloads
